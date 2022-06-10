@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "SourceHanSerifCN-Medium";
+    src: url("../fonts/SourceHanSerifCN-Medium-6.otf");
+}
+@font-face {
+    font-family: "SourceHanSerifCN-Regular";
+    src: url("../fonts/SourceHanSerifCN-Regular-1.otf");
+}
+@font-face {
+    font-family: "Bellamy-Stevenson";
+    src: url("../fonts/Bellamy-Stevenson-2.otf");
+}
+body {
+    margin: 0;
+}
+.main-left {
+    background-image: url("../images/left.jpeg");
+    background-size: cover;
+    height: 100%;
+    position: fixed;
+    width: 40%;
+}
+.main-left h1 {
+    font-family: Bellamy-Stevenson, serif;
+    color: #fff;
+    font-size: 120px;
+    text-align: center;
+    margin: 110px 0;
+    cursor: default;
+}
+.main-right {
+    box-sizing: border-box;
+    background-color: #fff;
+}
+@media(orientation:landscape){
+    .main-left {
+        display: block;
+    }
+    .main-right {
+        width: 60%;
+        margin-left: 40%;
+    }
+}
+@media(orientation:portrait){
+    .main-left {
+        display: none;
+    }
+    .main-right {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.list-item {
+    font-family: "SourceHanSerifCN-Regular", serif;
+    /*border: 1px solid #0a53be;*/
+    background: linear-gradient(white, white, #fafafa);
+    padding: 64px 48px;
+    cursor: default;
+}
+.list-item h2 {
+    margin: 0 0 20px 0;
+    font-weight: 500;
+    font-family: "SourceHanSerifCN-Medium", serif;
+    cursor: pointer;
+}
+.list-item h6 {
+    margin: 0 0 20px 0;
+}
+.list-item p {
+    color: #666;
+}
+.main-right nav {
+    height: 48px;
+    text-align: center;
+}
+.main-right nav a {
+    display: inline-block;
+    line-height: 48px;
+    height: 48px;
+    margin: 0 20px;
+    border-bottom: 3px solid darkgreen;
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+

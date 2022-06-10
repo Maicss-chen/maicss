@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "SourceHanSerifCN-Medium";
+    src: url("../fonts/SourceHanSerifCN-Medium-6.otf");
+}
+@font-face {
+    font-family: "SourceHanSerifCN-Regular";
+    src: url("../fonts/SourceHanSerifCN-Regular-1.otf");
+}
+@font-face {
+    font-family: "Cascadia Code";
+    src: url("../fonts/CascadiaCode.ttf");
+}
+#post {
+}
+#post * {
+    font-family: SourceHanSerifCN-Regular, serif;
+}
+#post h1,
+#post h2,
+#post h3,
+#post h4,
+#post h5,
+#post h6 {
+    font-family: SourceHanSerifCN-Medium, serif;
+    font-weight: 400;
+}
+#post p {
+}
+
+#post h1 {
+    margin-top: 40px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+}
+#post h2 {
+    margin-top: 28px;
+}
+#post p code,
+#post pre{
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow-scrolling: touch;
+    overflow: auto;
+}
+#post pre {
+    padding: 10px;
+    background-color: #2c3034;
+    color: #eeffee;
+}
+#post p code {
+    padding: 0 3px;
+    font-size: 14px;
+    height: 21px;
+    box-sizing: border-box;
+}
+#post code {
+    font-family: "Cascadia Code", serif;
+}
+#post blockquote {
+    background-color: #fafafa;
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+    border-left: 4px solid #027841;
+    color: #555;
+}
+#post ul li::marker,
+#post ol li::marker{
+    color: #027841;
+    font-weight: 800;
+}
+#post li {
+    margin: 6px 0;
+}
