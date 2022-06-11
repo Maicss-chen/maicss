@@ -80,7 +80,15 @@
 }
 
 #post-title {
+    font-family: SourceHanSerifCN-Medium, serif;
     text-align: center;
     font-weight: 500;
     margin: 100px 0;
+}
+#post-time {
+    text-align: right;
+    font-size: medium;
+    font-family: SourceHanSerifCN-Regular, serif;
+    font-weight: normal;
+    color: #555;
 }

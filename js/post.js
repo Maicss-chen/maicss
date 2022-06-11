@@ -15,6 +15,7 @@ function loadPost(markdownURL) {
             postHead.remove();
             document.title = head.title;
             document.getElementById("post-title").innerText = head.title;
+            document.getElementById("post-time").innerText = head.datetime;
 
             hljs.highlightAll();
         }
