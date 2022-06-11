@@ -24,7 +24,10 @@
     font-family: SourceHanSerifCN-Medium, serif;
     font-weight: 400;
 }
-#post p {
+#post > p {
+    text-indent: 2em;
+    line-height: 32px;
+    margin-bottom: 28px;
 }
 
 #post h1 {
@@ -72,4 +75,10 @@
 }
 #post li {
     margin: 6px 0;
+}
+
+#post-title {
+    text-align: center;
+    font-weight: 500;
+    margin: 100px 0;
 }

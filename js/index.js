@@ -1,3 +1,5 @@
+
+const lute = Lute.New();
 /**
  * 首页中列表项类
  */
@@ -8,13 +10,12 @@ class ListItem{
     datetime;
     /**
      * 构造函数
-     * @param listEle 要加入的父级元素
      * @param title 标题
      * @param brief 简介
      * @param datetime 时间和日期
      * @param url 点击该列表项需要打开的链接
      */
-    constructor(listEle, title, brief, datetime, url) {
+    init(title, brief, datetime, url) {
 
         this.box = document.createElement("div");
         this.box.classList.add("list-item");
@@ -31,10 +32,34 @@ class ListItem{
         this.box.append(this.title);
         this.box.append(this.brief);
 
-        listEle.append(this.box);
         this.box.addEventListener("click",function () {
             window.open(url)
         });
+    }
+    constructor(filename, parent){
+        let postUrl = '../posts/'+filename;
+        let self = this;
+        let httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+        httpRequest.open('GET', postUrl, true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+        httpRequest.send();//第三步：发送请求  将请求参数写在URL中
+        httpRequest.onreadystatechange = function () {
+            console.log(httpRequest.status)
+            if (httpRequest.readyState===4 && httpRequest.status === 200) {
+                let tempPost = document.createElement("div");
+                tempPost.innerHTML = lute.MarkdownStr("", httpRequest.responseText);
+                let postHead = tempPost.getElementsByTagName("blockquote")[0];
+                if (postHead === undefined) return;
+                let head = JSON.parse(postHead.getElementsByTagName("p")[0].innerHTML.replaceAll("<br>",""));
+                postHead.remove();
+                let firstParagraph = tempPost.getElementsByTagName("p")[0];
+                if (head.brief !== undefined) {
+                    self.init(head.title,head.brief,head.datetime,"post.html#"+filename)
+                }else {
+                    self.init(head.title,firstParagraph.innerText,head.datetime,"post.html#"+filename)
+                }
+                parent.append(self.box);
+            }
+        };
     }
 }
 
@@ -52,12 +77,7 @@ function loadList(){
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
             let json = JSON.parse(httpRequest.responseText);//获取到json字符串，还需解析
             for (let i = 0; i<json.length; i++){
-                console.log(json[i]);
-                new ListItem(document.getElementById("post-list"),
-                    json[i].title,
-                    json[i].brief,
-                    json[i].datetime,
-                    "post.html#" + json[i].post)
+                new ListItem(json[i], document.getElementById("post-list"))
             }
         }
     };

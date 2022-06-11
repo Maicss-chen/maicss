@@ -8,7 +8,13 @@ function loadPost(markdownURL) {
     httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState === 4 && httpRequest.status === 200) {
             let md = httpRequest.responseText;
-            document.getElementById("post").innerHTML = lute.MarkdownStr("", md);
+            let postDiv = document.getElementById("post");
+            postDiv.innerHTML = lute.MarkdownStr("", md);
+            let postHead = postDiv.getElementsByTagName("blockquote")[0];
+            let head = JSON.parse(postHead.getElementsByTagName("p")[0].innerHTML.replaceAll("<br>",""));
+            postHead.remove();
+            document.title = head.title;
+            document.getElementById("post-title").innerText = head.title;
         }
     };
 }
