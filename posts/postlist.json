@@ -1,14 +1,4 @@
 [
-  {
-    "title": "这是标题",
-    "datetime": "2022年10月10日 10:10",
-    "brief": "这是简介",
-    "post": "myfirst.md"
-  },
-  {
-    "title": "这是标题",
-    "datetime": "2022年10月10日 10:10",
-    "brief": "这是简介",
-    "post": "myfirst.md"
-  }
+  "0.my_blog.md",
+  "mysecond.md"
 ]
