@@ -15,6 +15,8 @@ function loadPost(markdownURL) {
             postHead.remove();
             document.title = head.title;
             document.getElementById("post-title").innerText = head.title;
+
+            hljs.highlightAll();
         }
     };
 }
@@ -22,5 +24,4 @@ window.onload = function () {
     let url = document.location.href;
     let hash = url.substring(url.lastIndexOf("#") + 1, url.length);
     loadPost("../posts/" + hash);
-
 }
