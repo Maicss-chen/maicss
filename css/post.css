@@ -25,7 +25,7 @@
     }
 
     .content {
-        margin-left: 0px;
+        margin-left: 0;
     }
 }
 .catalog {
@@ -54,8 +54,8 @@
     border-left: 0;
     padding: 0;
 }
-.catalog > ul >li {
-    padding: 10px 0 10px 10px;
+.catalog > ul > li {
+    padding: 5px 0 5px 10px;
     border-radius: 5px;
 }
 .catalog > ul > li li {
@@ -78,6 +78,7 @@
 
 #post * {
     font-family: SourceHanSerifCN-Regular, serif;
+    padding-left: 0;
 }
 #post h1,
 #post h2,
@@ -112,7 +113,7 @@
     overflow: auto;
 }
 #post pre {
-    padding: 3px;
+    padding: 3px 16px;
     background-color: #f3f3f3;
     /*background-color: #2c3034;*/
     /*color: #eeffee;*/
@@ -134,11 +135,11 @@
     border-left: 4px solid #027841;
     color: #555;
 }
-#post ul {
+#post ul,
+#post ol{
     padding-left: 1em;
 }
-#post ul li::marker,
-#post ol li::marker{
+#post li::marker{
     color: #027841;
     font-weight: 800;
 }
