@@ -10,8 +10,72 @@
     font-family: "Cascadia Code";
     src: url("../fonts/CascadiaCode.ttf");
 }
-#post {
+@media(orientation:landscape){
+    .catalog {
+        display: block;
+    }
+
+    .content {
+        margin-left: 250px;
+    }
 }
+@media(orientation:portrait){
+    .catalog {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0px;
+    }
+}
+.catalog {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #0f5132;
+    padding: 0 26px;
+    box-sizing: border-box;
+}
+.catalog h3 {
+    text-align: center;
+    color: white;
+    font-family: SourceHanSerifCN-Regular, serif;
+}
+
+.catalog ul {
+    list-style: none;
+    color: white;
+    padding-left: 0.5em;
+    border-left: 1px solid #fff3;
+}
+.catalog > ul {
+    border-left: 0;
+    padding: 0;
+}
+.catalog > ul >li {
+    padding: 10px 0 10px 10px;
+    border-radius: 5px;
+}
+.catalog > ul > li li {
+    padding: 3px 0 3px 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.catalog li {
+    margin: 5px 0;
+    /*font-family: SourceHanSerifCN-Regular, serif;*/
+    cursor: pointer;
+}
+.catalog li:hover {
+    background-color: #fff1;
+}
+
+.content {
+    padding: 0 26px;
+}
+
 #post * {
     font-family: SourceHanSerifCN-Regular, serif;
 }
@@ -69,6 +133,9 @@
     padding: 10px 10px 10px 20px;
     border-left: 4px solid #027841;
     color: #555;
+}
+#post ul {
+    padding-left: 1em;
 }
 #post ul li::marker,
 #post ol li::marker{

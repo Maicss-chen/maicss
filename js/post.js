@@ -1,6 +1,55 @@
 
 const lute = Lute.New();
 
+function buildCatalog(){
+    let contentNodes = document.getElementById("post").childNodes;
+    let titleTagNameList = ["H1","H2","H3","H4","H5","H6"];
+    let titleNodes = [];
+    contentNodes.forEach(function (value, key, parent) {
+        let titleLevel = titleTagNameList.indexOf(value.tagName);
+        if (titleLevel === -1) return;
+        titleNodes.push(value);
+    })
+
+    function build(nodes) {
+        let ulNode = document.createElement("ul")
+        let maxTitleLevel = 6;
+        for (let i = 0; i<nodes.length; i++){
+            let titleLevel = titleTagNameList.indexOf(nodes[i].tagName);
+            maxTitleLevel = Math.min(maxTitleLevel, titleLevel);
+        }
+        for (let i = 0; i<nodes.length; i++){
+            let titleLevel = titleTagNameList.indexOf(nodes[i].tagName);
+            if (titleLevel === maxTitleLevel){
+                let item = document.createElement("li");
+                item.innerText = nodes[i].innerText;
+                item.setAttribute("nodeIndex",i.toString());
+                item.addEventListener("click",function (event) {
+                    nodes[Number(item.getAttribute("nodeIndex"))].scrollIntoView();
+                    event.stopPropagation()
+                })
+                let subNodes = [];
+                for (let j = i+1; j<nodes.length; j++){
+                    let subTitleLevel = titleTagNameList.indexOf(nodes[j].tagName);
+                    if (subTitleLevel > titleLevel){
+                        subNodes.push(nodes[j]);
+                        i++;
+                    }else {
+                        break;
+                    }
+                }
+
+                if (subNodes.length > 0){
+                    item.append(build(subNodes))
+                }
+                ulNode.append(item);
+            }
+        }
+        return ulNode;
+    }
+    document.getElementsByClassName("catalog")[0].append(build(titleNodes));
+}
+
 function loadPost(markdownURL) {
     let httpRequest = new XMLHttpRequest();
     httpRequest.open('GET', markdownURL, true);
@@ -18,6 +67,7 @@ function loadPost(markdownURL) {
             document.getElementById("post-time").innerText = head.datetime;
 
             hljs.highlightAll();
+            buildCatalog();
         }
     };
 }
