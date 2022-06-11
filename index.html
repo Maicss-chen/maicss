@@ -6,16 +6,31 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="lute/lute.min.js"></script>
     <script src="js/index.js"></script>
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
 </head>
 <body>
 <div class="main-left">
     <h1>Maicss</h1>
 </div>
-<div class="main-right" id="post-list">
+<div class="main-right" >
     <nav>
-        <a>POSTS</a>
-        <a>@ME</a>
+        <a onclick="closeAboutMe()">POSTS</a>
+        <a onclick="popAboutMe()">@ME</a>
     </nav>
+    <div id="post-list">
+
+    </div>
+</div>
+<div class="about-me">
+    <i class="bi bi-x close-about-me" onclick="closeAboutMe()"></i>
+    <div class="head-image"></div>
+    <h2>刘风琛</h2>
+    <ul>
+        <li>学生</li>
+        <li>deepin社区版主</li>
+        <li>邮箱：maicss@126.com</li>
+        <li>感兴趣的关键词：C++、Qt、Linux、开源、Rust、Go、deepin、fedora、arch、Web。</li>
+    </ul>
 </div>
 </body>
 </html>

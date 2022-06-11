@@ -33,7 +33,7 @@ class ListItem{
         this.box.append(this.title);
         this.box.append(this.brief);
 
-        this.box.addEventListener("click",function () {
+        this.title.addEventListener("click",function () {
             window.open(url)
         });
     }
@@ -120,4 +120,11 @@ function loadList(){
 }
 window.onload = function (){
     loadList();
+}
+
+function popAboutMe(){
+    document.getElementsByClassName("about-me")[0].style.right = "0px";
+}
+function closeAboutMe(){
+    document.getElementsByClassName("about-me")[0].style.right = "-100%";
 }

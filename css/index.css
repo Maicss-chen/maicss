@@ -84,4 +84,43 @@ body {
     font-size: 22px;
     cursor: pointer;
 }
-
+.about-me {
+    height: 100%;
+    position: fixed;
+    width: 300px;
+    background-color: #fff;
+    top: 0;
+    right: -100%;
+    box-shadow: 0 0 10px 0 #0001;
+    transition: right .5s;
+}
+.about-me .close-about-me {
+    font-size: 28px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: darkgreen;
+    cursor: pointer;
+}
+.head-image {
+    height: 128px;
+    width: 128px;
+    border-radius: 64px;
+    /*border: 3px solid #0f5132;*/
+    margin: 100px auto 50px auto;
+    background-image: url("../images/head-image.jpeg");
+}
+.about-me h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+    font-family: SourceHanSerifCN-Regular, serif ;
+}
+.about-me ul li{
+    margin: 18px 0;
+    color: #555;
+    line-height: 30px;
+}
+.about-me ul li::marker {
+    color: #0f5132;
+}
