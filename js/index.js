@@ -23,6 +23,7 @@ class ListItem{
         this.title = document.createElement("h2");
         this.brief = document.createElement("p");
         this.datetime = document.createElement("h6");
+        this.datetime.classList.add("item-datetime");
 
         this.title.innerText = title;
         this.brief.innerText = brief;
@@ -51,16 +52,51 @@ class ListItem{
                 if (postHead === undefined) return;
                 let head = JSON.parse(postHead.getElementsByTagName("p")[0].innerHTML.replaceAll("<br>",""));
                 postHead.remove();
+
+
                 let firstParagraph = tempPost.getElementsByTagName("p")[0];
                 if (head.brief !== undefined) {
                     self.init(head.title,head.brief,head.datetime,"post.html#"+filename)
                 }else {
                     self.init(head.title,firstParagraph.innerText,head.datetime,"post.html#"+filename)
                 }
-                parent.append(self.box);
+
+                let date = StringToDate(head.datetime);
+
+                let lists = parent.getElementsByClassName("list-item");
+                console.log(lists)
+                let isInsert = false;
+                if (lists.length !== 0) {
+                    for (let item of lists){
+                        console.log(item)
+                        let itemDate = StringToDate(item.getElementsByClassName("item-datetime")[0].innerText);
+                        if (date > itemDate) {
+                            parent.insertBefore(self.box,item);
+                            isInsert = true;
+                            break;
+                        }
+                    }
+                }
+                if (!isInsert){
+                    parent.append(self.box);
+                }
             }
         };
     }
+}
+
+/**
+ * 将字符串的日期时间转换为Date对象，例如2022年6月11日 9:57
+ * @param date
+ */
+function StringToDate(date){
+    let year = date.split("年");
+    let month = year[1].split("月");
+    let day = month[1].split("日");
+
+    let time = day[1].substring(1,day[1].length).split(":");
+
+    return new Date(year[0], month[0], day[0], Number(time[0]), Number(time[1]));
 }
 
 /**
