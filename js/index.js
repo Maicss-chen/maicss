@@ -80,6 +80,7 @@ class ListItem{
                 if (!isInsert){
                     parent.append(self.box);
                 }
+                document.getElementById("loading").remove();
             }
         };
     }
