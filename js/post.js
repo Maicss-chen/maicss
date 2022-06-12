@@ -25,7 +25,12 @@ function buildCatalog(){
                 item.innerText = nodes[i].innerText;
                 item.setAttribute("nodeIndex",i.toString());
                 item.addEventListener("click",function (event) {
-                    nodes[Number(item.getAttribute("nodeIndex"))].scrollIntoView();
+                    let t = nodes[Number(item.getAttribute("nodeIndex"))];
+                    t.scrollIntoView();
+                    t.style.animation = "hover-title 1s ease"
+                    t.addEventListener("animationend",function () {
+                        this.style.animation = "none";
+                    })
                     event.stopPropagation()
                 })
                 let subNodes = [];
