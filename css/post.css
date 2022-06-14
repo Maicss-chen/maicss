@@ -37,6 +37,7 @@
     background-color: #0f5132;
     padding: 0 26px;
     box-sizing: border-box;
+    display: none;
 }
 .catalog h3 {
     text-align: center;

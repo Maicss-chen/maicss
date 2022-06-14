@@ -52,7 +52,14 @@ function buildCatalog(){
         }
         return ulNode;
     }
-    document.getElementsByClassName("catalog")[0].append(build(titleNodes));
+    if (titleNodes.length <= 3){
+        document.getElementsByClassName("catalog")[0].remove();
+        document.getElementsByClassName("content")[0].style.marginLeft="0";
+    }else {
+        document.getElementsByClassName("catalog")[0].append(build(titleNodes));
+        document.getElementsByClassName("catalog")[0].style.display="block";
+
+    }
 }
 
 function loadPost(markdownURL) {
