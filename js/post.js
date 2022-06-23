@@ -56,9 +56,7 @@ function buildCatalog(){
         document.getElementsByClassName("catalog")[0].remove();
         document.getElementsByClassName("content")[0].style.marginLeft="0";
     }else {
-        document.getElementsByClassName("catalog")[0].append(build(titleNodes));
-        document.getElementsByClassName("catalog")[0].style.display="block";
-
+        document.getElementsByClassName("catalog")[0].append(build(titleNodes));\
     }
 }
 
