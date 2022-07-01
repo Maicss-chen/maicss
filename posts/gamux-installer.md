@@ -43,7 +43,7 @@ exit $ret
 
 这个压缩包内有以下内容：
 
-```
+```text
 ├── config.json
 ├── data
 ├── game.desktop
@@ -87,7 +87,7 @@ exit $ret
 
 下面是desktop文件示例：
 
-```
+```text
 [Desktop Entry]
 Name=Kingdom Rush Frontiers - Tower Defense
 Name[zh_CN]=王国保卫战:前线
