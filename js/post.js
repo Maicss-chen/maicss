@@ -75,9 +75,16 @@ function loadPost(markdownURL) {
             document.title = head.title;
             document.getElementById("post-title").innerText = head.title;
             document.getElementById("post-time").innerText = head.datetime;
-
             hljs.highlightAll();
             buildCatalog();
+
+            let links = postDiv.getElementsByTagName("a");
+            for (let link of links){
+                link.addEventListener("click",function (event){
+                    window.open(link.href)
+                    event.preventDefault();
+                });
+            }
         }
     };
 }
