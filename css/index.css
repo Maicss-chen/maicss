@@ -1,12 +1,4 @@
 @font-face {
-    font-family: "SourceHanSerifCN-Medium";
-    src: url("../fonts/SourceHanSerifCN-Medium-6.otf");
-}
-@font-face {
-    font-family: "SourceHanSerifCN-Regular";
-    src: url("../fonts/SourceHanSerifCN-Regular-1.otf");
-}
-@font-face {
     font-family: "Bellamy-Stevenson";
     src: url("../fonts/Bellamy-Stevenson-2.otf");
 }
@@ -66,7 +58,7 @@ body {
 }
 
 .list-item {
-    font-family: "SourceHanSerifCN-Regular", serif;
+    font-family: "宋体", serif;
     /*border: 1px solid #0a53be;*/
     background: linear-gradient(white, white, #fafafa);
     padding: 64px 48px;
@@ -75,7 +67,7 @@ body {
 .list-item h2 {
     margin: 0 0 20px 0;
     font-weight: 500;
-    font-family: "SourceHanSerifCN-Medium", serif;
+    font-family: "宋体", serif;
     cursor: pointer;
     color: #2c3034;
     transition: color .6s;

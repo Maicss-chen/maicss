@@ -1,12 +1,4 @@
 @font-face {
-    font-family: "SourceHanSerifCN-Medium";
-    src: url("../fonts/SourceHanSerifCN-Medium-6.otf");
-}
-@font-face {
-    font-family: "SourceHanSerifCN-Regular";
-    src: url("../fonts/SourceHanSerifCN-Regular-1.otf");
-}
-@font-face {
     font-family: "Cascadia Code";
     src: url("../fonts/CascadiaCode.ttf");
 }
@@ -41,7 +33,7 @@
 .catalog h3 {
     text-align: center;
     color: white;
-    font-family: SourceHanSerifCN-Regular, serif;
+    font-family: "宋体", serif;
 }
 
 .catalog ul {
@@ -77,7 +69,7 @@
 }
 
 #post * {
-    font-family: SourceHanSerifCN-Regular, serif;
+    font-family: "宋体", serif;
     padding-left: 0;
 }
 #post h1,
@@ -86,7 +78,7 @@
 #post h4,
 #post h5,
 #post h6 {
-    font-family: SourceHanSerifCN-Medium, serif;
+    font-family: "宋体", serif;
     font-weight: 400;
 }
 #post > p {
@@ -161,7 +153,7 @@
 }
 
 #post-title {
-    font-family: SourceHanSerifCN-Medium, serif;
+    font-family: 宋体, serif;
     text-align: center;
     font-weight: 500;
     margin: 100px 0;
@@ -169,7 +161,7 @@
 #post-time {
     text-align: right;
     font-size: medium;
-    font-family: SourceHanSerifCN-Regular, serif;
+    font-family: 宋体, serif;
     font-weight: normal;
     color: #555;
 }
